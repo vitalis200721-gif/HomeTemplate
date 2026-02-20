@@ -19,57 +19,31 @@ export default function OpenGraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "72px",
-          backgroundColor: "#0a0a0a",
-          color: "white",
-          position: "relative"
+          background: "#0a0a0a",
+          color: "white"
         }}
       >
-        {/* Background lighting */}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundImage:
-              "radial-gradient(900px 500px at 50% 0%, rgba(255,255,255,0.10), transparent 60%), radial-gradient(700px 400px at 15% 20%, rgba(255,255,255,0.08), transparent 60%), radial-gradient(800px 500px at 90% 10%, rgba(255,255,255,0.06), transparent 60%)"
-          }}
-        />
-
-        {/* Subtle grid */}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundImage:
-              "linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px)",
-            backgroundSize: "64px 64px",
-            opacity: 0.12,
-            WebkitMaskImage:
-              "radial-gradient(700px 460px at 50% 25%, black 55%, transparent 100%)"
-          }}
-        />
-
-        {/* Top brand */}
-        <div style={{ position: "relative", display: "flex", alignItems: "center", gap: 14 }}>
+        {/* Top */}
+        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
           <div
             style={{
-              width: 48,
-              height: 48,
-              borderRadius: 14,
+              width: 56,
+              height: 56,
+              borderRadius: 16,
               border: "1px solid rgba(255,255,255,0.12)",
               background: "rgba(255,255,255,0.06)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontSize: 20,
               fontWeight: 900,
-              letterSpacing: -1
+              fontSize: 24
             }}
           >
             OT
           </div>
 
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <div style={{ fontSize: 20, fontWeight: 700 }}>
+          <div>
+            <div style={{ fontSize: 22, fontWeight: 700 }}>
               {siteConfig.name}
             </div>
             <div style={{ fontSize: 14, opacity: 0.7 }}>
@@ -78,11 +52,11 @@ export default function OpenGraphImage() {
           </div>
         </div>
 
-        {/* Center hero */}
-        <div style={{ position: "relative" }}>
+        {/* Center */}
+        <div>
           <div
             style={{
-              fontSize: 56,
+              fontSize: 64,
               fontWeight: 800,
               lineHeight: 1.05,
               letterSpacing: -1
@@ -93,10 +67,10 @@ export default function OpenGraphImage() {
 
           <div
             style={{
-              marginTop: 18,
-              fontSize: 22,
+              marginTop: 20,
+              fontSize: 24,
               opacity: 0.8,
-              maxWidth: 920,
+              maxWidth: 900,
               lineHeight: 1.4
             }}
           >
@@ -104,38 +78,17 @@ export default function OpenGraphImage() {
           </div>
         </div>
 
-        {/* Bottom tags */}
+        {/* Bottom */}
         <div
           style={{
-            position: "relative",
             display: "flex",
             justifyContent: "space-between",
-            alignItems: "flex-end"
+            fontSize: 14,
+            opacity: 0.65
           }}
         >
-          <div style={{ display: "flex", gap: 10 }}>
-            {["Next.js 14+", "App Router", "Tailwind CSS", "Cinematic Dark"].map(
-              (tag) => (
-                <div
-                  key={tag}
-                  style={{
-                    padding: "10px 14px",
-                    borderRadius: 999,
-                    border: "1px solid rgba(255,255,255,0.12)",
-                    background: "rgba(255,255,255,0.06)",
-                    fontSize: 14,
-                    opacity: 0.9
-                  }}
-                >
-                  {tag}
-                </div>
-              )
-            )}
-          </div>
-
-          <div style={{ fontSize: 14, opacity: 0.65 }}>
-            {siteConfig.url.replace(/^https?:\/\//, "")}
-          </div>
+          <div>Next.js 14+ · App Router · Tailwind</div>
+          <div>{siteConfig.url.replace(/^https?:\/\//, "")}</div>
         </div>
       </div>
     ),
